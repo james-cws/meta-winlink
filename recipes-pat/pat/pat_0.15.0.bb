@@ -16,8 +16,6 @@ do_compile[network] = "1"
 GO_LINKSHARED = ""
 GOBUILDFLAGS:remove = "-buildmode=pie"
 
-# CGO_ENABLED = "1"
-
 inherit go-mod
 
 FILES:${PN} += "/usr/local/bin"

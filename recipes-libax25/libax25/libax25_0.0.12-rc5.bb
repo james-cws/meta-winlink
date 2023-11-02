@@ -7,12 +7,8 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=3f4e3b0d2d0cff4fafc1ac182f4f22dd"
 DEPENDS = "glibc"
 PROVIDES = "libax25"
 
-# SRC_URI = "git://linux-ax25.in-berlin.de/pub/scm/libax25;protocol=https;branch=master;tag=${BPN}-${PV}"
-# SRC_URI = "git://linux-ax25.in-berlin.de/pub/scm/libax25;protocol=https;branch=master"
 SRC_URI = "git://linux-ax25.in-berlin.de/cgit/libax25.git;protocol=https;branch=master"
 SRCREV = "1d4372367c56ae167e4c8c70f96cf0e9246d8a1a"
-# SRCREV = "${AUTOREV}"
-# SRCREV = "${BPN}-${PV}"
 
 S = "${WORKDIR}/git"
 
