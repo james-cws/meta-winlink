@@ -1,44 +1,23 @@
 # meta-winlink
-Yocto layer to incorporate the open source pat winlink client, and possible other clients in the future.
+Yocto layer to provide winlink clients for embedded Linux targets.
 
-This README file contains information on the contents of the winlink layer.
+This layer does not provide any machine specific support.
 
-Please see the corresponding sections below for details.
 
-Dependencies
+Contributing
 ============
 
-  URI: <first dependency>
-  branch: <branch name>
-
-  URI: <second dependency>
-  branch: <branch name>
-
-  .
-  .
-  .
-
-Patches
-=======
-
-Please submit any patches against the winlink layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
-
-Table of Contents
-=================
-
-  I. Adding the winlink layer to your build
- II. Misc
+Please submit any patches against the winlink layer to the mailing list (meta-winlink@coastwide.systems)
 
 
-I. Adding the winlink layer to your build
+Adding the winlink layer to your build
 =================================================
 
-Run 'bitbake-layers add-layer winlink'
+Run `bitbake-layers add-layer winlink`
 
-II. Misc
-========
+To use the reference winlink.conf distro, add `DISTRO = winlink` to your local.conf
 
---- replace with specific information about the winlink layer ---
+
+Maintainer(s)
+=============
+* james-cws VA7ADG <james@coastwide.systems>
