@@ -2,7 +2,7 @@ SUMMARY = "A small CLI only image for lightweight headless devices"
 
 LICENSE = "MIT"
 
-IMAGE_FEATURES:append = " ssh-server-dropbear"
+IMAGE_FEATURES:append = " ssh-server-dropbear package-management"
 IMAGE_INSTALL = " \
     packagegroup-core-boot \ 
     packagegroup-core-full-cmdline \

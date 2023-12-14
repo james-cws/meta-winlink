@@ -8,19 +8,26 @@ LIC_FILES_CHKSUM = "file://src/${GO_IMPORT}/LICENSE;md5=c68285de5604d4299551faf5
 DEPENDS = "libax25"
 
 SRC_URI = "git://github.com/la5nta/pat;protocol=https;branch=master"
-SRCREV = "ae8ce001d3cd1e15a662647a45ababf88d72bb61"
+SRCREV = "b9f4b0002b94402c759c8ab3243f256493bc99c5"
 
 GO_INSTALL = "${GO_IMPORT}"
 do_compile[network] = "1"
 
+GOVERSION="1.19%"
 GO_LINKSHARED = ""
 GOBUILDFLAGS:remove = "-buildmode=pie"
 
 inherit go-mod
 
-FILES:${PN} += "/usr/local/bin"
+FILES:${PN} += "/usr/local/bin ${systemd_user_unitdir}"
 RDEPENDS:${PN} += "libax25"
 
 do_configure:prepend() {
+    mv ${S}/src/${GO_IMPORT}/debian/pat@.service ${S}/src/${GO_IMPORT}/
     rm -r ${S}/src/${GO_IMPORT}/debian
+}
+
+do_install:append() {
+    install -d ${D}${systemd_user_unitdir}
+    install -m 0644 ${S}/src/${GO_IMPORT}/pat@.service ${D}${systemd_user_unitdir}
 }
