@@ -8,7 +8,6 @@ IMAGE_INSTALL:append = " \
     packagegroup-core-boot \ 
     packagegroup-core-full-cmdline \
     e2fsprogs-resize2fs \
-    libubootenv \
     ${CORE_IMAGE_EXTRA_INSTALL} \
 "
 
