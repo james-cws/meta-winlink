@@ -13,7 +13,7 @@ IMAGE_INSTALL:append = " \
 
 IMAGE_ROOTFS_SIZE ?= "8192"
 
-IMAGE_FSTYPES = "jffs2 tar.gz"
+IMAGE_FSTYPES = "jffs2 tar.gz wic"
 
 inherit core-image
 
