@@ -10,7 +10,10 @@ SRC_URI = " \
 "
 
 IMAGE_INSTALL:append = " \
+    util-linux-sfdisk \
+    libubootenv \
     swupdate \
+    swupdate-www \
 "
 
 IMAGE_DEPENDS = "winlink-image-base virtual/kernel"
