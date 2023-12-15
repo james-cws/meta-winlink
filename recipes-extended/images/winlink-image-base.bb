@@ -4,6 +4,7 @@ LICENSE = "MIT"
 
 IMAGE_FEATURES:append = " ssh-server-dropbear package-management"
 IMAGE_INSTALL:append = " \
+    packagegroup-meta-winlink \
     packagegroup-core-boot \ 
     packagegroup-core-full-cmdline \
     e2fsprogs-resize2fs \

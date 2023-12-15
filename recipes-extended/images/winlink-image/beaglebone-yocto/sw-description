@@ -1,0 +1,64 @@
+software =
+{
+	version = "0.2.0";
+
+	beaglebone = {
+		hardware-compatibility: [ "1.0"];
+		stable : {
+			copy1 : {
+				images: (
+					{
+						filename = "winlink-image-base-beaglebone-yocto.tar.gz";
+						device = "/dev/mmcblk1p2";
+						type = "raw";
+						compressed = "zlib";
+					}
+				);
+				scripts: (
+					{
+						filename = "emmcsetup.lua";
+						type = "lua";
+					}
+				);
+				uboot: (
+					{
+						name = "boot_targets";
+						value = "legacy_mmc1 mmc1 nand0 pxe dhcp";
+					},
+					{
+						name = "bootcmd_legacy_mmc1";
+						value = "setenv mmcdev 1;setenv bootpart 1:2; run mmcboot";
+					}
+				);
+
+			};
+			copy2 : {
+				images: (
+					{
+						filename = "winlink-image-base-beaglebone-yocto.tar.gz";
+						device = "/dev/mmcblk1p3";
+						type = "raw";
+						compressed = "zlib";
+					}
+				);
+				scripts: (
+					{
+						filename = "emmcsetup.lua";
+						type = "lua";
+					}
+				);
+				uboot: (
+					{
+						name = "boot_targets";
+						value = "legacy_mmc1 mmc1 nand0 pxe dhcp";
+					},
+					{
+						name = "bootcmd_legacy_mmc1";
+						value = "setenv mmcdev 1;setenv bootpart 1:3; run mmcboot";
+					}
+				);
+			};
+		};
+	}
+}
+
