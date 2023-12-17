@@ -3,12 +3,12 @@ software =
 	version = "0.2.0";
 
 	beaglebone = {
-		hardware-compatibility: [ "1.0"];
+		hardware-compatibility: [ "1.0", "2.1"];
 		stable : {
 			copy1 : {
 				images: (
 					{
-						filename = "winlink-image-base-beaglebone-yocto.tar.gz";
+						filename = "winlink-image-base-beaglebone-yocto.ext4.gz";
 						device = "/dev/mmcblk1p2";
 						type = "raw";
 						compressed = "zlib";
@@ -35,7 +35,7 @@ software =
 			copy2 : {
 				images: (
 					{
-						filename = "winlink-image-base-beaglebone-yocto.tar.gz";
+						filename = "winlink-image-base-beaglebone-yocto.ext4.gz";
 						device = "/dev/mmcblk1p3";
 						type = "raw";
 						compressed = "zlib";

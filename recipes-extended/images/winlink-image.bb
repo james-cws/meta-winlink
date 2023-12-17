@@ -9,17 +9,10 @@ SRC_URI = " \
     file://emmcsetup.lua \
 "
 
-IMAGE_INSTALL:append = " \
-    util-linux-sfdisk \
-    libubootenv \
-    swupdate \
-    swupdate-www \
-"
-
 IMAGE_DEPENDS = "winlink-image-base virtual/kernel"
 
 SWUPDATE_IMAGES = "winlink-image-base zImage"
-SWUPDATE_IMAGES_FSTYPES[winlink-image-base] = ".tar.gz"
+SWUPDATE_IMAGES_FSTYPES[winlink-image-base] = ".ext4.gz"
 SWUPDATE_IMAGES_FSTYPES[zImage] = ""
 
 inherit swupdate
